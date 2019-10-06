@@ -1,0 +1,972 @@
+/*----------------------------------------------------------------------
+[Master Dev Style]
+----------------------------------------------------------------------*/
+body{
+    // overflow: hidden;
+    color: #555;
+}
+
+._nav-schools{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    @media (max-width: 1024px){
+        ._nav-small{ 
+            background-color: rgba(0,0,0,0.8);
+            &:before{
+                background-color: rgba(0,0,0,0.9);
+            }
+        }
+    }
+    ._nav-small{
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        color: rgba(255,255,255,0.9);
+        ._nav-small-left{
+            li{
+                a{
+                    &:hover{
+                        color: #ddd;
+                    }
+                }
+            }
+        }
+        ._nav-small-right{
+            padding-right: 4px;
+            li{
+                a{
+                    &:hover{
+                        color: #ddd;
+                    }
+                    &._btn-register{
+                        position: relative;
+                        margin: 0 16px;
+                        &:before{
+                            content: "";
+                            position: absolute;
+                            top: 5px;
+                            right: -4px;
+                            bottom: 5px;
+                            left: -4px;
+                            z-index: -1;
+                            border-radius: 4px;
+                            transition: 0.2s;
+                            background-color: rgb(28, 166, 179);
+                        }
+                        &:hover{
+                            color: #fff;
+                        }
+                        &:hover:before{
+                            background-color: rgb(21, 143, 155);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 1023px){
+        ._nav-small{
+            border: none;
+        }
+    }
+    ._nav{
+        color: rgba(255,255,255,0.9);
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+        ._nav-icon{
+            i{
+                background-color: #fff;
+                &:before{
+                    background-color: #fff;
+                }
+                &:after{
+                    background-color: #fff;
+                }
+            }
+            &:hover{
+                background-color: transparent;
+            }
+            &._nav-active{
+                background-color: rgba(255,255,255,0.5);
+            }
+        }
+
+        @media (max-width: 1023px){
+            ._nav-items{
+                background-color: rgba(0,0,0,0.8);
+            }
+        }
+    
+        ._nav-dropdown{
+            background-color: rgba(0,0,0,0.8);
+            & > li{
+                &:hover{
+                    background-color: rgba(255,255,255,0.1);
+                }
+            }
+            border: none;
+            border-radius: 8px;
+            top: 90%;
+        }
+        ._nav-arrow{
+            top: 24px;
+            border-color: #fff;
+        }
+
+        ._nav-list{
+            ._nav-active{
+                background-color: rgba(0,0,0,0.8);
+            }
+            & > li{
+                &:hover{
+                    background-color: transparent;
+                    color: #ddd;
+                }
+                &._nav-link{
+                    @media (min-width: 1024px){ 
+                        &._nav-link-active{
+                            position: relative;
+                            background-color: transparent;
+                            &:before{
+                                content: "";
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                height: 4px;
+                                border-radius: 32px;
+                                background-color: rgba(255,255,255,0.7);
+                            }
+                        }
+                    }
+                    @media (max-width: 1023px){ 
+                        &._nav-link-active{
+                            position: relative;
+                            background-color: transparent;
+                            &:before{
+                                content: "";
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                top: 0;
+                                width: 4px;
+                                border-radius: 32px;
+                                background-color: rgba(255,255,255,0.7);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+._header{
+    position: relative;
+    &:before{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.1));
+        z-index: 1;
+    }
+    .carousel-caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-25%);
+        width: 80%;
+        padding: 0 30px;
+    }
+}
+
+._bulletin-schools{
+    position: relative;
+    padding: 20px 0;
+    color: rgba(255,255,255,0.8);
+    background-color: rgb(2, 10, 27);
+    hr{
+        background-color: rgba(255,255,255,0.15);
+    }
+    .text-truncate{
+        a{
+            color: inherit;
+        }
+    }
+    .display-4{
+        font-size: 40px;
+    }
+    .lead{
+        font-size: 16px;
+    }
+}
+
+._news-schools{
+    margin-top: 80px;
+    & > h1{
+        color: #ccc;
+        a{
+            color: inherit;    
+            i{
+                margin-left: 30px;
+                position: relative;
+                display: inline-block;
+                &:after{
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-53%,-52%);
+                    z-index: -1;
+                    height: 70px;
+                    width: 70px;
+                    border-radius: 50%;
+                    border: 1px solid #ccc;
+                    transition: 0.2s;
+                }
+                &:hover:after{
+                    border-color: #aaa;
+                }
+            }
+        }
+    }
+    @media (max-width: 600px){
+        & > h1{
+            font-size: 20px;
+            a{
+                i{
+                    margin-left: 20px;
+                    &:after{
+                        height: 40px;
+                        width: 40px;
+                    }
+                }
+            }
+        }
+    }
+    @media (min-width: 993px){
+        ._grid{
+            height: 600px;
+        }
+    }
+    ._grid{
+        position: relative;
+        ._date{
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            z-index: 2;
+            color: #fff;
+        }
+        ._middle{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -40%);
+            width: 100%;
+            padding: 0 30px;
+            color: #fff;
+            z-index: 1;
+            .lead{
+                font-size: 16px;
+            }
+            h4{
+                font-weight: 300;
+            }
+            a{
+                flex: none;
+                text-align: left;
+            }
+        }
+        @media (min-width: 993px){
+            & > div{
+                &:nth-child(1){
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    width: 50%;
+                }
+                &:nth-child(2){
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 50%;
+                    height: 50%;
+                }
+                &:nth-child(3){
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    height: 50%;
+                    width: 50%;
+                }
+            }
+        }
+
+        @media (max-width: 992px){
+            & > div{
+                position: relative;
+                height: 300px;
+            }
+        }
+    }
+}
+
+._teacher-schools{
+    margin: 80px 4px 0 4px;
+    & > h1{
+        color: #ccc;
+        a{
+            color: inherit;    
+            i{
+                margin-left: 30px;
+                position: relative;
+                display: inline-block;
+                &:after{
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-53%,-52%);
+                    z-index: -1;
+                    height: 70px;
+                    width: 70px;
+                    border-radius: 50%;
+                    border: 1px solid #ccc;
+                    transition: 0.2s;
+                }
+                &:hover:after{
+                    border-color: #aaa;
+                }
+            }
+        }
+    }
+    @media (max-width: 600px){
+        & > h1{
+            font-size: 20px;
+            a{
+                i{
+                    margin-left: 20px;
+                    &:after{
+                        height: 40px;
+                        width: 40px;
+                    }
+                }
+            }
+        }
+    }
+    ._grid{
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        ._middle{
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            padding: 0 30px;
+            color: #fff;
+            z-index: 1;
+            .lead{
+                font-size: 16px;
+            }
+            h4{
+                font-weight: 300;
+                font-size: 18px;
+            }
+            a{
+                flex: none;
+                text-align: left;
+            }
+        }
+        & > div{
+            position: relative;
+            width: 250px;
+            height: 350px;
+            margin: 8px;
+        }
+        @media (max-width: 600px){
+            & > div{
+                width: 100%;
+            }
+        }
+    }
+}
+
+._gallery-schools{
+    margin-top: 80px;
+    & > h1{
+        color: #ccc;
+        a{
+            color: inherit;    
+            i{
+                margin-left: 30px;
+                position: relative;
+                display: inline-block;
+                &:after{
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-53%,-52%);
+                    z-index: -1;
+                    height: 70px;
+                    width: 70px;
+                    border-radius: 50%;
+                    border: 1px solid #ccc;
+                    transition: 0.2s;
+                }
+                &:hover:after{
+                    border-color: #aaa;
+                }
+            }
+        }
+    }
+    @media (max-width: 600px){
+        & > h1{
+            font-size: 20px;
+            a{
+                i{
+                    margin-left: 20px;
+                    &:after{
+                        height: 40px;
+                        width: 40px;
+                    }
+                }
+            }
+        }
+    }
+    @media (min-width: 993px){
+        ._grid{
+            height: 400px;
+            position: relative;
+            margin: 8px;
+            & > div{
+                &:nth-child(1){
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    width: 40%;
+                }
+                &:nth-child(2){
+                    position: absolute;
+                    top: 0;
+                    left: 40%;
+                    height: 50%;
+                    width: 20%;
+                }
+                &:nth-child(3){
+                    position: absolute;
+                    bottom: 0;
+                    left: 40%;
+                    height: 50%;
+                    width: 20%;
+                }
+                &:nth-child(4){
+                    position: absolute;
+                    top: 0;
+                    left: 60%;
+                    height: 50%;
+                    width: 20%;
+                }
+                &:nth-child(5){
+                    position: absolute;
+                    bottom: 0;
+                    left: 60%;
+                    height: 50%;
+                    width: 20%;
+                }
+                &:nth-child(6){
+                    position: absolute;
+                    top: 0;
+                    left: 80%;
+                    height: 50%;
+                    width: 20%;
+                }
+                &:nth-child(7){
+                    position: absolute;
+                    bottom: 0;
+                    left: 80%;
+                    height: 50%;
+                    width: 20%;
+                }
+            }
+        }        
+    }
+    @media (max-width: 993px){
+        ._grid{
+            overflow: hidden;
+            margin: 14px;
+            & > div{
+                &:nth-child(1){
+                    height: 350px;
+                    position: relative;
+                }
+                &:nth-child(2){
+                    position: relative;
+                    float: left;
+                    width: calc(50% - 8px);
+                    height: 200px;
+                }
+                &:nth-child(3){
+                    position: relative;
+                    float: right;
+                    width: calc(50% - 8px);
+                    height: 200px;
+                }
+                &:nth-child(4){
+                    position: relative;
+                    float: left;
+                    width: calc(50% - 8px);
+                    height: 200px;
+                }
+                &:nth-child(5){
+                    position: relative;
+                    float: right;
+                    width: calc(50% - 8px);
+                    height: 200px;
+                }
+                &:nth-child(6){
+                    position: relative;
+                    float: left;
+                    width: calc(50% - 8px);
+                    height: 200px;
+                }
+                &:nth-child(7){
+                    position: relative;
+                    float: right;
+                    width: calc(50% - 8px);
+                    height: 200px;
+                }
+            }
+        }   
+    }
+}
+
+._event-schools{
+    margin-top: 80px;
+    & > h1{
+        color: #ccc;
+        a{
+            color: inherit;    
+            i{
+                margin-left: 30px;
+                position: relative;
+                display: inline-block;
+                &:after{
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-53%,-52%);
+                    z-index: -1;
+                    height: 70px;
+                    width: 70px;
+                    border-radius: 50%;
+                    border: 1px solid #ccc;
+                    transition: 0.2s;
+                }
+                &:hover:after{
+                    border-color: #aaa;
+                }
+            }
+        }
+    }
+    @media (max-width: 600px){
+        & > h1{
+            font-size: 20px;
+            a{
+                i{
+                    margin-left: 20px;
+                    &:after{
+                        height: 40px;
+                        width: 40px;
+                    }
+                }
+            }
+        }
+    }
+    @media (min-width: 993px){
+        ._grid{
+            height: 600px;
+        }
+    }
+    ._grid{
+        position: relative;
+        ._date{
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            z-index: 2;
+            color: #fff;
+        }
+        ._middle{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -40%);
+            width: 100%;
+            padding: 0 30px;
+            color: #fff;
+            z-index: 1;
+            .lead{
+                font-size: 16px;
+            }
+            h4{
+                font-weight: 300;
+            }
+            a{
+                flex: none;
+                text-align: left;
+            }
+        }
+        @media (min-width: 993px){
+            & > div{
+                &:nth-child(1){
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 50%;
+                }
+                &:nth-child(2){
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 50%;
+                    height: 50%;
+                }
+                &:nth-child(3){
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    height: 50%;
+                    width: 50%;
+                }
+            }
+        }
+
+        @media (max-width: 992px){
+            & > div{
+                position: relative;
+                height: 300px;
+            }
+        }
+    }
+}
+
+._blog-schools{
+    margin-top: 80px;
+    & > h1{
+        color: #ccc;
+        a{
+            color: inherit;    
+            i{
+                margin-left: 30px;
+                position: relative;
+                display: inline-block;
+                &:after{
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-53%,-52%);
+                    z-index: -1;
+                    height: 70px;
+                    width: 70px;
+                    border-radius: 50%;
+                    border: 1px solid #ccc;
+                    transition: 0.2s;
+                }
+                &:hover:after{
+                    border-color: #aaa;
+                }
+            }
+        }
+    }
+    @media (max-width: 600px){
+        & > h1{
+            font-size: 20px;
+            a{
+                i{
+                    margin-left: 20px;
+                    &:after{
+                        height: 40px;
+                        width: 40px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+._fasilitas-schools{
+    margin: 80px 4px 0 4px;
+    & > h1{
+        color: #ccc;
+        a{
+            color: inherit;    
+            i{
+                margin-left: 30px;
+                position: relative;
+                display: inline-block;
+                &:after{
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-53%,-52%);
+                    z-index: -1;
+                    height: 70px;
+                    width: 70px;
+                    border-radius: 50%;
+                    border: 1px solid #ccc;
+                    transition: 0.2s;
+                }
+                &:hover:after{
+                    border-color: #aaa;
+                }
+            }
+        }
+    }
+    @media (max-width: 600px){
+        & > h1{
+            font-size: 20px;
+            a{
+                i{
+                    margin-left: 20px;
+                    &:after{
+                        height: 40px;
+                        width: 40px;
+                    }
+                }
+            }
+        }
+    }
+    ._grid{
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        ._middle{
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            padding: 0 30px;
+            color: #fff;
+            z-index: 1;
+            .lead{
+                font-size: 16px;
+            }
+            h4{
+                font-weight: 300;
+                font-size: 18px;
+            }
+            a{
+                flex: none;
+                text-align: left;
+            }
+        }
+        & > div{
+            position: relative;
+            width: 250px;
+            height: 200px;
+            margin: 8px;
+        }
+        @media (max-width: 600px){
+            & > div{
+                width: 100%;
+            }
+        }
+    }
+}
+
+._e-learning-schools{
+    margin-top: 80px;
+    & > h1{
+        color: #ccc;
+        a{
+            color: inherit;    
+            i{
+                margin-left: 30px;
+                position: relative;
+                display: inline-block;
+                &:after{
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-53%,-52%);
+                    z-index: -1;
+                    height: 70px;
+                    width: 70px;
+                    border-radius: 50%;
+                    border: 1px solid #ccc;
+                    transition: 0.2s;
+                }
+                &:hover:after{
+                    border-color: #aaa;
+                }
+            }
+        }
+    }
+    @media (max-width: 600px){
+        & > h1{
+            font-size: 20px;
+            a{
+                i{
+                    margin-left: 20px;
+                    &:after{
+                        height: 40px;
+                        width: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+._testimonial-schools{
+    margin-top: 80px;
+    & > h1{
+        color: #ccc;
+        a{
+            color: inherit;    
+            i{
+                margin-left: 30px;
+                position: relative;
+                display: inline-block;
+                &:after{
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-53%,-52%);
+                    z-index: -1;
+                    height: 70px;
+                    width: 70px;
+                    border-radius: 50%;
+                    border: 1px solid #ccc;
+                    transition: 0.2s;
+                }
+                &:hover:after{
+                    border-color: #aaa;
+                }
+            }
+        }
+    }
+    @media (max-width: 600px){
+        & > h1{
+            font-size: 20px;
+            a{
+                i{
+                    margin-left: 20px;
+                    &:after{
+                        height: 40px;
+                        width: 40px;
+                    }
+                }
+            }
+        }
+    }
+    ._circle{
+        text-align: center;
+        display: inline-block;
+        margin-bottom: 16px;
+        position: relative;
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.9);
+    }
+    .carousel{
+        height: 400px;  
+        background-color: rgb(2, 10, 27);  
+        .carousel-caption{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-70%);
+            width: 80%;
+            padding: 0 30px;
+        }
+    }
+}
+
+._information-schools{
+    margin-top: 80px;
+    position: relative;
+    height: 250px;
+    .container{
+        max-width: 500px;
+        position: relative;
+        z-index: 2;
+        color: #fff;
+        input{
+            width: 100%;
+            padding: 8px 16px;
+            background-color: transparent;
+            border:1px solid rgba(255,255,255,0.5);
+            color: #fff;
+            display: block;
+            outline: none;
+            &::placeholder{
+                color: #fff;
+                font-weight: 300;
+            }
+        }
+        small{
+            display: block;
+            margin-top: 4px;
+            &.lead{
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+._footer-schools{
+    color: rgba(255,255,255,0.3);
+    background-color: rgb(2, 10, 27);
+    a{
+        color: inherit;
+        transition: 0.1s;
+        text-decoration: none;
+        &:hover{
+            color: #fff;
+        }
+    }
+    .btn{
+        color: #ddd;
+    }
+    
+    i{
+        font-size: 24px;
+        &.fa-facebook-f{
+            color: #1877f2;
+        }
+        &.fa-twitter{
+            color: #1da1f2;
+        }
+        &.fa-instagram{
+            color: #ffdc7d;
+        }
+        &.fa-youtube-play{
+            color: #ff0000;
+        }
+    }
+    hr{
+        background-color: rgb(27, 32, 41);
+    }
+}
